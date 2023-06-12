@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import Card from '../../components/Card'
+import styles from './Home.module.css'
 
-const Home = () => {
+function Home() {
   const [properties, setProperties] = useState([])
 
   useEffect(() => {
@@ -11,7 +12,7 @@ const Home = () => {
   }, [])
 
   return (
-    <div className="home">
+    <div className={styles['grid-container']}>
       {properties.map((property) => (
         <Card key={property.id} property={property} />
       ))}
