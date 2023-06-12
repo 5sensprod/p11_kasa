@@ -5,6 +5,7 @@ function Header() {
   return (
     <header>
       <nav>
+        <h1> HEADER</h1>
         <ul>
           <li>
             <Link to="/">Accueil</Link>
