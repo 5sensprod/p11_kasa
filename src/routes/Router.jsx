@@ -1,13 +1,13 @@
 import { Route, Routes } from 'react-router-dom'
 import Home from '../pages/Home'
-import Listing from '../pages/Listing'
+import About from '../pages/About'
 import NotFound from '../pages/NotFound'
 
 function AppRouter() {
   return (
     <Routes>
       <Route path="/" element={<Home />} />
-      <Route path="/listing" element={<Listing />} />
+      <Route path="/about" element={<About />} />
       <Route path="*" element={<NotFound />} />
     </Routes>
   )

@@ -11,7 +11,7 @@ function Header() {
             <Link to="/">Accueil</Link>
           </li>
           <li>
-            <Link to="/listing">Liste des logements</Link>
+            <Link to="/about">A propos</Link>
           </li>
         </ul>
       </nav>
