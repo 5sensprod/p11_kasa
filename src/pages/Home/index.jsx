@@ -1,9 +1,20 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import Card from '../../components/Card'
 
-function Home() {
+const Home = () => {
+  const [properties, setProperties] = useState([])
+
+  useEffect(() => {
+    fetch('/data/logements.json')
+      .then((response) => response.json())
+      .then((data) => setProperties(data))
+  }, [])
+
   return (
-    <div>
-      <h1>Bienvenue sur la page d'accueil !</h1>
+    <div className="home">
+      {properties.map((property) => (
+        <Card key={property.id} property={property} />
+      ))}
     </div>
   )
 }
