@@ -1,5 +1,12 @@
 .grid-container {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-  }
+  display: flex;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+  background: #F7F7F7;
+  border-radius: 25px;
+  max-width: 1240px;
+  width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 60px 0;
+}
