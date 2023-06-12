@@ -1,0 +1,46 @@
+.headerContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.logoContainer {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 13.125rem;
+    height: 4.25rem;
+}
+
+.links {
+    display: flex;
+    gap: 3.5rem;
+}
+
+.link {
+    color: rgba(255, 96, 96, 1);
+    font-family: Montserrat;
+    text-align: right;
+    font-size: 1.5rem;
+    letter-spacing: 0;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .logo {
+        width: 9.0625rem;
+        height: 2.9375rem;
+    }
+    
+    .link {
+        font-size: 1rem;
+    }
+
+    .links {
+        gap: 0.6rem;
+    }
+}

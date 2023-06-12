@@ -1,12 +1,15 @@
 import React from 'react'
+import logo from '../../assets/LOGO_mobile.svg'
+import styles from './Footer.module.css'
 
-function Footer() {
+const Footer = () => {
   return (
-    <footer>
-      <div>
-        <h1>FOOTER !</h1>
-      </div>
-    </footer>
+    <div className={styles.footerContainer}>
+      <img src={logo} alt="Logo" className={styles.logo} />
+      <span className={styles.footerText}>
+        © 2023 Kasa. All rights reserved
+      </span>
+    </div>
   )
 }
 

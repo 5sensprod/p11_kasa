@@ -1,0 +1,16 @@
+.layoutContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 1440px;
+    margin: 40px auto 63px auto;
+    padding: 0 100px;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .layoutContainer {
+        margin: 20px auto 16px auto;
+        padding: 0 20px;
+    }
+}

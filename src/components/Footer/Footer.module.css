@@ -1,0 +1,40 @@
+.footerContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 1);
+    color: rgba(255, 255, 255, 1);
+    padding: 2rem 0;
+    width: 100%;
+}
+
+
+.logo {
+    width: 7.625rem;
+    /* 122px en px */
+    height: 2.47139rem;
+    /* 39.444419860839844px px */
+    color: rgba(255, 255, 255, 1);
+}
+
+.footerText {
+    font-family: Montserrat;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-top: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    
+    .logo {
+        width: 5rem;
+        /* ~80px en px */
+        height: 1.6rem;
+        /* ~25px en px */
+    }
+
+    .footerText {
+        font-size: 0.75rem;
+    }
+}
