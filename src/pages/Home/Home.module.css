@@ -1,6 +1,5 @@
 .grid-container {
   display: flex;
-  grid-template-columns: repeat(3, 1fr);
   gap: 20px;
   background: #F7F7F7;
   border-radius: 25px;
