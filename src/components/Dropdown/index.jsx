@@ -3,7 +3,7 @@ import styles from './Dropdown.module.css'
 import chevronDown from '../../assets/chevron-down.svg'
 import chevronUp from '../../assets/chevron-up.svg'
 
-function Dropdown({ title, description }) {
+function Dropdown({ title, description, isList }) {
   const [isOpen, setIsOpen] = useState(false)
 
   return (
@@ -20,7 +20,13 @@ function Dropdown({ title, description }) {
           className={styles.chevron}
         />
       </button>
-      {isOpen && <div className={styles.description}>{description}</div>}
+      {isOpen && (
+        <ul className={styles.dropdownList}>
+          {isList
+            ? description.map((item) => <li key={item}>{item}</li>)
+            : description}
+        </ul>
+      )}
     </div>
   )
 }

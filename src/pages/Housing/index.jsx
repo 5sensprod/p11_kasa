@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import styles from './Housing.module.css'
+import Dropdown from '../../components/Dropdown'
 
 function Housing() {
   const { id } = useParams()
   const [property, setProperty] = useState(null)
 
   useEffect(() => {
-    // Remplacez par la véritable API ou le chemin du fichier json
     fetch(`/data/logements.json`)
       .then((response) => response.json())
       .then((data) => {
@@ -20,12 +21,22 @@ function Housing() {
   }
 
   return (
-    <div>
-      {/* Ici vous pouvez rendre votre UI pour le logement en utilisant les données dans `property` */}
-      <h1>{property.title}</h1>
-      <img src={property.cover} alt={property.title} />
-      <p>{property.description}</p>
-      {/* Vous devrez probablement rendre plus de détails ici */}
+    <div className={styles.housingContainer}>
+      <img
+        src={property.cover}
+        alt={property.title}
+        className={styles.imgHousing}
+      />
+      <h1 className={styles.title}>{property.title}</h1>
+      <p className={styles.location}>{property.location}</p>
+      <div className={styles.dropdownContainer}>
+        <Dropdown title="Description" description={property.description} />
+        <Dropdown
+          title="Équipements"
+          description={property.equipments}
+          isList={true}
+        />
+      </div>
     </div>
   )
 }

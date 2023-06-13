@@ -5,6 +5,7 @@
     max-width: 1440px;
     margin: 40px auto 63px auto;
     padding: 0 100px;
+    /* text-align: center; */
 }
 
 @media screen and (max-width: 768px) {
