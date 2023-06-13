@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom'
 import styles from './Housing.module.css'
 import Dropdown from '../../components/Dropdown'
 import Tags from '../../components/Tags'
+import StarRating from '../../components/StarRating'
 
 function Housing() {
   const { id } = useParams()
@@ -22,7 +23,7 @@ function Housing() {
   }
 
   return (
-    <div className={styles.housingContainer}>
+    <main className={styles.housingContainer}>
       <img
         src={property.cover}
         alt={property.title}
@@ -31,6 +32,7 @@ function Housing() {
       <h1 className={styles.title}>{property.title}</h1>
       <p className={styles.location}>{property.location}</p>
       <Tags tags={property.tags} />
+      <StarRating rating={property.rating} />
       <div className={styles.dropdownContainer}>
         <Dropdown title="Description" description={property.description} />
         <Dropdown
@@ -39,7 +41,7 @@ function Housing() {
           isList={true}
         />
       </div>
-    </div>
+    </main>
   )
 }
 
