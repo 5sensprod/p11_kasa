@@ -14,16 +14,6 @@ function Slideshow({ pictures }) {
 
   return (
     <div className={styles.slideshow}>
-      {pictures.length > 1 && (
-        <>
-          <button className={styles.prev} onClick={prevSlide}>
-            &#10094;
-          </button>
-          <button className={styles.next} onClick={nextSlide}>
-            &#10095;
-          </button>
-        </>
-      )}
       {pictures.map((imgUrl, index) => (
         <div
           className={`${styles.slide} ${
@@ -35,8 +25,16 @@ function Slideshow({ pictures }) {
         </div>
       ))}
       {pictures.length > 1 && (
-        <div className={styles.slideNumber}>
-          {currentSlide + 1} / {pictures.length}
+        <div>
+          <button className={styles.prev} onClick={prevSlide}>
+            &#10094;
+          </button>
+          <button className={styles.next} onClick={nextSlide}>
+            &#10095;
+          </button>
+          <div className={styles.slideNumber}>
+            {currentSlide + 1} / {pictures.length}
+          </div>
         </div>
       )}
     </div>
