@@ -1,29 +1,16 @@
-import React, { useEffect, useState } from 'react'
-import { useParams, useNavigate } from 'react-router-dom'
+import React from 'react'
+import { useParams } from 'react-router-dom'
 import styles from './Housing.module.css'
 import Dropdown from '../../components/Dropdown'
 import Tags from '../../components/Tags'
 import StarRating from '../../components/StarRating'
 import HostInfo from '../../components/HostInfo'
 import Slideshow from '../../components/Slideshow'
+import useFetchProperty from '../../hooks/useFetchProperty'
 
 function Housing() {
   const { id } = useParams()
-  const [property, setProperty] = useState(null)
-  const navigate = useNavigate()
-
-  useEffect(() => {
-    fetch(`/data/logements.json`)
-      .then((response) => response.json())
-      .then((data) => {
-        const selectedProperty = data.find((property) => property.id === id)
-        if (!selectedProperty) {
-          navigate('/not-found')
-        } else {
-          setProperty(selectedProperty)
-        }
-      })
-  }, [id, navigate])
+  const property = useFetchProperty(id)
 
   if (!property) {
     return null
