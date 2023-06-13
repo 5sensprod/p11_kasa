@@ -3,6 +3,8 @@ import logo from '../../assets/logo_white.svg'
 import styles from './Footer.module.css'
 import { Link } from 'react-router-dom'
 
+// Footer est un composant qui représente le pied de page du site.
+
 function Footer() {
   return (
     <footer className={styles.footerContainer}>

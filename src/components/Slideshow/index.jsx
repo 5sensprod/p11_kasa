@@ -1,6 +1,14 @@
 import React, { useState } from 'react'
+import PropTypes from 'prop-types'
 import styles from './Slideshow.module.css'
 
+/**
+ * Le composant Slideshow est utilisé pour afficher un diaporama d'images.
+ * Il accepte un tableau de chaînes (pictures) en props, qui sont des URL d'images.
+ * Il utilise l'état pour garder une trace de la diapositive actuelle.
+ * Des boutons permettent de passer à la diapositive suivante ou précédente.
+ * Si il n'y a qu'une seule image, les boutons de navigation ne seront pas affichés.
+ */
 function Slideshow({ pictures }) {
   const [currentSlide, setCurrentSlide] = useState(0)
 
@@ -39,6 +47,10 @@ function Slideshow({ pictures }) {
       )}
     </div>
   )
+}
+
+Slideshow.propTypes = {
+  pictures: PropTypes.arrayOf(PropTypes.string).isRequired,
 }
 
 export default Slideshow

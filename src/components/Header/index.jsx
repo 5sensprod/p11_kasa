@@ -3,6 +3,8 @@ import { Link } from 'react-router-dom'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.svg'
 
+// Header est un composant qui représente l'en-tête du site.
+
 function Header() {
   return (
     <header className={styles.headerContainer}>
