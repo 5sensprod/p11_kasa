@@ -1,21 +1,21 @@
 .hostInfo {
-    display: flex;
-    width: 167px;
-    height: 64px;
-    align-items: center;
-    margin-bottom: 24px;
-  }
-  
-  .name {
-    font-weight: 500;
-    font-size: 18px;
-    color: #FF6060;
-  }
-  
-  .picture {
-    width: 64px;
-    height: 64px;
-    object-fit: cover;
-    margin-left: auto;
-    border-radius: 50%;
-  }
+  display: flex;
+  width: 167px;
+  height: 64px;
+  align-items: center;
+  margin-bottom: 24px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 18px;
+  color: #FF6060;
+}
+
+.picture {
+  width: 64px;
+  height: 64px;
+  object-fit: cover;
+  margin-left: auto;
+  border-radius: 50%;
+}

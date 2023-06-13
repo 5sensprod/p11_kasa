@@ -10,16 +10,18 @@ function Home() {
 
   return (
     <>
-      <Banner
-        title="Chez vous, partout et ailleurs"
-        backgroundImage={homeBackground}
-        visible={true}
-      />
-      <div className={styles['grid-container']}>
-        {properties.map((property) => (
-          <Card key={property.id} property={property} />
-        ))}
-      </div>
+      <main>
+        <Banner
+          title="Chez vous, partout et ailleurs"
+          backgroundImage={homeBackground}
+          visible={true}
+        />
+        <div className={styles['grid-container']}>
+          {properties.map((property) => (
+            <Card key={property.id} property={property} />
+          ))}
+        </div>
+      </main>
     </>
   )
 }

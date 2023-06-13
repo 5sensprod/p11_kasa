@@ -1,15 +1,15 @@
 .tagContainer {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 24px;
-  }
-  
-  .tag {
-    background-color: #ff6060;
-    padding: .3rem 1rem;
-    border-radius: 1rem;
-    margin-right: 1rem;
-    color: #fff;
-    font-size: .8rem;
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.tag {
+  background-color: #ff6060;
+  padding: .3rem 1rem;
+  border-radius: 1rem;
+  margin-right: 1rem;
+  color: #fff;
+  font-size: .8rem;
+}

@@ -1,10 +1,10 @@
 .stars {
-    display: flex;
-    margin-bottom: 37px;
-  }
-  
-  .star {
-    width: 25px;
-    height: 24px;
-    margin-right: 2px;
-  }
+  display: flex;
+  margin-bottom: 37px;
+}
+
+.star {
+  width: 25px;
+  height: 24px;
+  margin-right: 2px;
+}

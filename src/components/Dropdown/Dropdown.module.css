@@ -21,7 +21,6 @@
 
 .title {
     font-weight: 500;
-    /* font-size: 18px; */
     color: white;
 }
 
@@ -29,18 +28,10 @@
     width: 24px;
 }
 
-/* .description {
-    padding: 18px;
-    color: #FF6060;
-    font-weight: 400;
-    font-size: 24px;
-    line-height: 142.6%;
-} */
 .dropdownList {
     list-style: none;
-    padding: 18px;
+    padding: 0 18px;
     color: #FF6060;
     font-weight: 400;
-    /* font-size: 18px; */
     line-height: 142.6%;
-  }
+}
