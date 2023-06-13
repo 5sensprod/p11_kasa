@@ -22,7 +22,7 @@ function Housing() {
       <h1 className={styles.title}>{property.title}</h1>
       <p className={styles.location}>{property.location}</p>
       <Tags tags={property.tags} />
-      <StarRating rating={property.rating} />
+      <StarRating rating={parseInt(property.rating)} />
       <HostInfo host={property.host} />
       <div className={styles.dropdownContainer}>
         <Dropdown title="Description" description={property.description} />
