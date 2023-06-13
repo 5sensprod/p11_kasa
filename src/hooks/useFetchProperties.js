@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 
-export default function useFetchProperty(id) {
-  const [property, setProperty] = useState(null)
+export default function useFetchProperties(id) {
+  const [data, setData] = useState(id ? null : [])
   const navigate = useNavigate()
 
   useEffect(() => {
@@ -13,12 +13,16 @@ export default function useFetchProperty(id) {
         }
         return response.json()
       })
-      .then((data) => {
-        const selectedProperty = data.find((property) => property.id === id)
-        if (!selectedProperty) {
-          navigate('/not-found')
+      .then((properties) => {
+        if(id){
+          const selectedProperty = properties.find((property) => property.id === id)
+          if (!selectedProperty) {
+            navigate('/not-found')
+          } else {
+            setData(selectedProperty)
+          }
         } else {
-          setProperty(selectedProperty)
+          setData(properties)
         }
       })
       .catch((error) => {
@@ -27,5 +31,5 @@ export default function useFetchProperty(id) {
       })
   }, [id, navigate])
 
-  return property
+  return data
 }

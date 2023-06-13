@@ -1,17 +1,12 @@
-import React, { useEffect, useState } from 'react'
+import React from 'react'
 import Card from '../../components/Card'
 import Banner from '../../components/Banner'
 import styles from './Home.module.css'
 import homeBackground from '../../assets/bg-sea-min.png'
+import useFetchProperties from '../../hooks/useFetchProperties'
 
 function Home() {
-  const [properties, setProperties] = useState([])
-
-  useEffect(() => {
-    fetch('/data/logements.json')
-      .then((response) => response.json())
-      .then((data) => setProperties(data))
-  }, [])
+  const properties = useFetchProperties() // Utilisation du hook personnalisé
 
   return (
     <>

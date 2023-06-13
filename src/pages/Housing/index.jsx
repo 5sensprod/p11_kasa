@@ -6,11 +6,11 @@ import Tags from '../../components/Tags'
 import StarRating from '../../components/StarRating'
 import HostInfo from '../../components/HostInfo'
 import Slideshow from '../../components/Slideshow'
-import useFetchProperty from '../../hooks/useFetchProperty'
+import useFetchProperties from '../../hooks/useFetchProperties' // Modification ici
 
 function Housing() {
   const { id } = useParams()
-  const property = useFetchProperty(id)
+  const property = useFetchProperties(id) // Modification ici
 
   if (!property) {
     return null
