@@ -6,9 +6,11 @@ import logo from '../../assets/logo.svg'
 function Header() {
   return (
     <header className={styles.headerContainer}>
-      <div className={styles.logoContainer}>
-        <img src={logo} alt="Logo" className={styles.logo} />
-      </div>
+      <Link to="/">
+        <div className={styles.logoContainer}>
+          <img src={logo} alt="Logo" className={styles.logo} />
+        </div>
+      </Link>
       <nav className={styles.links}>
         <Link to="/" className={styles.link}>
           Accueil

@@ -20,6 +20,8 @@ function About() {
               key={index}
               title={section.title}
               description={section.description}
+              titleFontSize="24px"
+              listFontSize="24px"
             />
           ))}
         </div>
