@@ -6,11 +6,11 @@ import Tags from '../../components/Tags'
 import StarRating from '../../components/StarRating'
 import HostInfo from '../../components/HostInfo'
 import Slideshow from '../../components/Slideshow'
-import useFetchProperties from '../../hooks/useFetchProperties' // Modification ici
+import useFetch from '../../hooks/useFetch'
 
 function Housing() {
   const { id } = useParams()
-  const property = useFetchProperties(id) // Modification ici
+  const property = useFetch('/data/logements.json', id)
 
   if (!property) {
     return null

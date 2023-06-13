@@ -3,10 +3,10 @@ import Card from '../../components/Card'
 import Banner from '../../components/Banner'
 import styles from './Home.module.css'
 import homeBackground from '../../assets/bg-sea-min.png'
-import useFetchProperties from '../../hooks/useFetchProperties'
+import useFetch from '../../hooks/useFetch'
 
 function Home() {
-  const properties = useFetchProperties() // Utilisation du hook personnalisé
+  const properties = useFetch('/data/logements.json') // Utilisation du hook personnalisé l'adresse est passée en argument
 
   return (
     <>
