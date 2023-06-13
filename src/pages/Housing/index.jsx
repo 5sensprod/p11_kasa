@@ -4,6 +4,7 @@ import styles from './Housing.module.css'
 import Dropdown from '../../components/Dropdown'
 import Tags from '../../components/Tags'
 import StarRating from '../../components/StarRating'
+import HostInfo from '../../components/HostInfo'
 
 function Housing() {
   const { id } = useParams()
@@ -33,6 +34,7 @@ function Housing() {
       <p className={styles.location}>{property.location}</p>
       <Tags tags={property.tags} />
       <StarRating rating={property.rating} />
+      <HostInfo host={property.host} />
       <div className={styles.dropdownContainer}>
         <Dropdown title="Description" description={property.description} />
         <Dropdown
