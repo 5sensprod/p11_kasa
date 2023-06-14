@@ -19,7 +19,7 @@ function Home() {
   }
 
   return (
-    <main>
+    <main className={styles.homeMain}>
       <Banner
         title="Chez vous, partout et ailleurs"
         backgroundImage={homeBackground}
