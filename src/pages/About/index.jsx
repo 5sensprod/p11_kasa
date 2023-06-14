@@ -12,26 +12,24 @@ import styles from './About.module.css'
  */
 function About() {
   return (
-    <>
+    <main className={styles.about}>
       <Banner
         title="Chez vous, partout et ailleurs"
         backgroundImage={aboutBackground}
         visible={false}
       />
-      <main className={styles.about}>
-        <div className={styles.dropdownContainer}>
-          {aboutInfo.map((section) => (
-            <Dropdown
-              key={section.title}
-              title={section.title}
-              description={section.description}
-              titleFontSize="24px"
-              listFontSize="24px"
-            />
-          ))}
-        </div>
-      </main>
-    </>
+      <div className={styles.dropdownContainer}>
+        {aboutInfo.map((section) => (
+          <Dropdown
+            key={section.title}
+            title={section.title}
+            description={section.description}
+            titleFontSize="24px"
+            listFontSize="24px"
+          />
+        ))}
+      </div>
+    </main>
   )
 }
 
