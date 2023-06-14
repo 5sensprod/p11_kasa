@@ -24,11 +24,15 @@ function Housing() {
   return (
     <main className={styles.housingContainer}>
       <Slideshow pictures={property.pictures} />
-      <h1 className={styles.title}>{property.title}</h1>
-      <p className={styles.location}>{property.location}</p>
-      <Tags tags={property.tags} />
-      <StarRating rating={parseInt(property.rating)} />
-      <HostInfo host={property.host} />
+      <div className={styles.infoContainer}>
+        <div className={styles.titleAndLocation}>
+          <h1 className={styles.title}>{property.title}</h1>
+          <p className={styles.location}>{property.location}</p>
+        </div>
+        <HostInfo host={property.host} />
+        <Tags tags={property.tags} />
+        <StarRating rating={parseInt(property.rating)} />
+      </div>
       <div className={styles.dropdownContainer}>
         <Dropdown title="Description" description={property.description} />
         <Dropdown
