@@ -7,6 +7,7 @@ import StarRating from '../../components/StarRating'
 import HostInfo from '../../components/HostInfo'
 import Slideshow from '../../components/Slideshow'
 import useFetch from '../../hooks/useFetch'
+import useIsMobile from '../../hooks/useIsMobile'
 
 /**
  * Le composant Housing est utilisé pour afficher les détails d'un logement spécifique.
@@ -16,6 +17,7 @@ import useFetch from '../../hooks/useFetch'
 function Housing() {
   const { id } = useParams()
   const property = useFetch('/data/logements.json', id)
+  const isMobile = useIsMobile()
 
   if (!property) {
     return null
@@ -34,11 +36,18 @@ function Housing() {
         <StarRating rating={parseInt(property.rating)} />
       </div>
       <div className={styles.dropdownContainer}>
-        <Dropdown title="Description" description={property.description} />
+        <Dropdown
+          title="Description"
+          description={property.description}
+          titleFontSize={isMobile ? '13px' : '18px'}
+          listFontSize={isMobile ? '12px' : '18px'}
+        />
         <Dropdown
           title="Équipements"
           description={property.equipments}
           isList={true}
+          titleFontSize={isMobile ? '13px' : '18px'}
+          listFontSize={isMobile ? '12px' : '18px'}
         />
       </div>
     </main>

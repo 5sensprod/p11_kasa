@@ -9,3 +9,21 @@ main {
     margin: auto;
     max-width: 1023px;
 }
+
+.title--small {
+    font-size: 13px;
+}
+
+.list--small {
+    font-size: 12px;
+}
+
+@media screen and (max-width: 768px) {
+    .title {
+        font-size: 13px;
+    }
+
+    .dropdownList {
+        font-size: 12px;
+    }
+}

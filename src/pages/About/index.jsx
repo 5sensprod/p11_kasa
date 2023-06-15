@@ -4,6 +4,7 @@ import Banner from '../../components/Banner'
 import aboutBackground from '../../assets/bg-montain-min.png'
 import aboutInfo from '../../data/aboutInfo'
 import styles from './About.module.css'
+import useIsMobile from '../../hooks/useIsMobile'
 
 /**
  * Le composant About est utilisé pour afficher la page À propos.
@@ -11,6 +12,7 @@ import styles from './About.module.css'
  * Il utilise ensuite le composant Dropdown pour afficher une série de sections d'informations.
  */
 function About() {
+  const isMobile = useIsMobile()
   return (
     <main className={styles.about}>
       <Banner
@@ -24,8 +26,8 @@ function About() {
             key={section.title}
             title={section.title}
             description={section.description}
-            titleFontSize="24px"
-            listFontSize="24px"
+            titleFontSize={isMobile ? '13px' : '24px'}
+            listFontSize={isMobile ? '12px' : '24px'}
           />
         ))}
       </div>
