@@ -1,12 +1,12 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
 import logo from '../../assets/logo.svg'
 
 // Header est un composant qui représente l'en-tête du site.
-
 function Header({ marginBottomSize }) {
   let marginBottomClass
+  let location = useLocation()
 
   switch (marginBottomSize) {
     case 'small':
@@ -25,18 +25,28 @@ function Header({ marginBottomSize }) {
 
   return (
     <header className={`${styles.headerContainer} ${marginBottomClass}`}>
-      <Link to="/">
+      <NavLink to="/">
         <div className={styles.logoContainer}>
           <img src={logo} alt="Logo" className={styles.logo} />
         </div>
-      </Link>
+      </NavLink>
       <nav className={styles.links}>
-        <Link to="/" className={styles.link}>
+        <NavLink
+          to="/"
+          className={
+            location.pathname === '/' ? styles.activeLink : styles.link
+          }
+        >
           Accueil
-        </Link>
-        <Link to="/about" className={styles.link}>
+        </NavLink>
+        <NavLink
+          to="/about"
+          className={
+            location.pathname === '/about' ? styles.activeLink : styles.link
+          }
+        >
           A Propos
-        </Link>
+        </NavLink>
       </nav>
     </header>
   )
