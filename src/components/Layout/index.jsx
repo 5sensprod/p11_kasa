@@ -3,11 +3,11 @@ import Header from '../Header'
 import Footer from '../Footer'
 import styles from './Layout.module.css'
 
-function Layout({ children }) {
+function Layout({ children, marginBottomSize }) {
   return (
     <>
       <div className={styles.layoutContainer}>
-        <Header />
+        <Header marginBottomSize={marginBottomSize} />
         {children}
       </div>
       <Footer />

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { MarginBottomContext } from '../../contexts/MarginBottomContext'
 import Card from '../../components/Card'
 import Banner from '../../components/Banner'
 import styles from './Home.module.css'
@@ -12,7 +13,12 @@ import Loading from '../../components/Loading'
  * Il utilise ensuite le composant Card pour afficher une liste de propriétés.
  */
 function Home() {
+  const { setMarginBottomSize } = useContext(MarginBottomContext)
   const properties = useFetch('/data/logements.json') // Utilisation du hook personnalisé, l'adresse est passée en argument
+
+  useEffect(() => {
+    setMarginBottomSize('large')
+  }, [setMarginBottomSize])
 
   if (!properties) {
     return <Loading /> // Retourne le composant de chargement s'il n'y a pas encore de données

@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { MarginBottomContext } from '../../contexts/MarginBottomContext'
 import Dropdown from '../../components/Dropdown'
 import Banner from '../../components/Banner'
 import aboutBackground from '../../assets/bg-montain-min.png'
@@ -12,7 +13,13 @@ import useIsMobile from '../../hooks/useIsMobile'
  * Il utilise ensuite le composant Dropdown pour afficher une série de sections d'informations.
  */
 function About() {
+  const { setMarginBottomSize } = useContext(MarginBottomContext)
   const isMobile = useIsMobile()
+
+  useEffect(() => {
+    setMarginBottomSize('medium')
+  }, [setMarginBottomSize])
+
   return (
     <main className={styles.about}>
       <Banner

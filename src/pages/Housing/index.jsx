@@ -1,4 +1,5 @@
-import React from 'react'
+import React, { useContext, useEffect } from 'react'
+import { MarginBottomContext } from '../../contexts/MarginBottomContext'
 import { useParams } from 'react-router-dom'
 import styles from './Housing.module.css'
 import Dropdown from '../../components/Dropdown'
@@ -18,6 +19,11 @@ function Housing() {
   const { id } = useParams()
   const property = useFetch('/data/logements.json', id)
   const isMobile = useIsMobile()
+  const { setMarginBottomSize } = useContext(MarginBottomContext)
+
+  useEffect(() => {
+    setMarginBottomSize('small')
+  }, [setMarginBottomSize])
 
   if (!property) {
     return null

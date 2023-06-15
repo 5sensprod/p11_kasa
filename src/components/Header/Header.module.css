@@ -3,7 +3,7 @@
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    margin-bottom: 63px;
+    /* margin-bottom: 63px; */
     max-width: 1240px;
 }
 
@@ -25,18 +25,24 @@
 .link {
     color: rgba(255, 96, 96, 1);
     font-family: Montserrat;
-    text-align: right;
     font-size: 1.5rem;
-    letter-spacing: 0;
     text-decoration: none;
+}
+
+.headerMarginSmall {
+    margin-bottom: 20px;
+}
+
+.headerMarginMedium {
+    margin-bottom: 44px;
+}
+
+.headerMarginLarge {
+    margin-bottom: 63px;
 }
 
 @media screen and (max-width: 768px) {
     .headerContainer {
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-        width: 100%;
         margin-bottom: 16px;
     }
 
@@ -52,5 +58,17 @@
 
     .links {
         gap: 0.6rem;
+    }
+
+    .headerMarginSmall {
+        margin-bottom: 27px;
+    }
+    
+    .headerMarginMedium {
+        margin-bottom: 17px;
+    }
+    
+    .headerMarginLarge {
+        margin-bottom: 16px;
     }
 }

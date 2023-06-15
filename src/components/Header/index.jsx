@@ -5,9 +5,26 @@ import logo from '../../assets/logo.svg'
 
 // Header est un composant qui représente l'en-tête du site.
 
-function Header() {
+function Header({ marginBottomSize }) {
+  let marginBottomClass
+
+  switch (marginBottomSize) {
+    case 'small':
+      marginBottomClass = styles.headerMarginSmall
+      break
+    case 'medium':
+      marginBottomClass = styles.headerMarginMedium
+      break
+    case 'large':
+      marginBottomClass = styles.headerMarginLarge
+      break
+    default:
+      marginBottomClass = styles.headerMarginSmall
+      break
+  }
+
   return (
-    <header className={styles.headerContainer}>
+    <header className={`${styles.headerContainer} ${marginBottomClass}`}>
       <Link to="/">
         <div className={styles.logoContainer}>
           <img src={logo} alt="Logo" className={styles.logo} />
