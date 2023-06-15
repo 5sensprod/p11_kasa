@@ -1,10 +1,9 @@
 .stars {
   display: flex;
-  margin-bottom: 37px;
+  gap: 15px;
 }
 
 .star {
   width: 25px;
   height: 24px;
-  margin-right: 2px;
 }

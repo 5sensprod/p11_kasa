@@ -15,20 +15,18 @@
 
 .infoContainer {
     display: grid;
-    grid-template-columns: 70% 30%;
-    grid-template-rows: 1fr 50px 50px;
     grid-template-areas:
         "titleAndLocation hostInfo"
         "tags starRating";
-    gap: 20px;
+    gap: 24px;
     align-items: center;
+    margin-top: 30px;
+    justify-content: space-between;
 }
 
 .titleAndLocation {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    grid-area: titleAndLocation;
 }
 
 .title {
@@ -43,19 +41,8 @@
     color: #FF6060;
 }
 
-.hostInfo {
-    grid-area: hostInfo;
-}
-
-.tags {
-    grid-area: tags;
-}
-
-.starRating {
-    grid-area: starRating;
-}
-
 .dropdownContainer {
+    margin-top: 24px;
     display: flex;
     justify-content: space-between;
     width: 100%;
