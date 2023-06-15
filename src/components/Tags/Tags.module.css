@@ -11,3 +11,14 @@
   color: #fff;
   font-size: .8rem;
 }
+
+
+@media screen and (max-width: 768px) {
+  .tag {
+    background-color: #ff6060;
+    padding: .3rem 1rem;
+    border-radius: 1rem;
+    color: #fff;
+    font-size: 10px;
+  }
+}

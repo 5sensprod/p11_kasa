@@ -8,8 +8,6 @@
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    font-size: 5em;
-    color: white;
     background: none;
     padding: 10px;
     cursor: pointer;
@@ -59,4 +57,29 @@
     color: white;
     font-weight: 500;
     font-size: 18px;
+}
+
+@media screen and (max-width: 768px) {
+
+    .prev img,
+    .next img {
+        width: 12px;
+        height: 20px;
+    }
+
+    .slide img {
+        height: 255px;
+    }
+
+    .slideNumber {
+        display: none;
+    }
+
+    .prev {
+        left: 6px;
+    }
+    
+    .next {
+        right: 6px;
+    }
 }

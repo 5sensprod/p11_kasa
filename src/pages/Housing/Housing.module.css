@@ -49,3 +49,18 @@
     align-items: flex-start;
     gap: 76px;
 }
+
+@media screen and (max-width: 768px) {
+
+    .infoContainer {
+        margin-top: 15px;
+    }
+
+    .title {
+        font-size: 18px;
+    }
+
+    .location {
+        font-size: 14px;
+    }
+}
