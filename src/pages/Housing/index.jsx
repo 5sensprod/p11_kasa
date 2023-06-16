@@ -17,7 +17,10 @@ import useIsMobile from '../../hooks/useIsMobile'
  */
 function Housing() {
   const { id } = useParams()
-  const property = useFetch('/data/logements.json', id)
+  const property = useFetch(
+    'https://raw.githubusercontent.com/5sensprod/p11_kasa/main/public/data/logements.json',
+    id
+  )
   const isMobile = useIsMobile()
   const { setMarginBottomSize } = useContext(MarginBottomContext)
 

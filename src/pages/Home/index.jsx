@@ -14,7 +14,9 @@ import Loading from '../../components/Loading'
  */
 function Home() {
   const { setMarginBottomSize } = useContext(MarginBottomContext)
-  const properties = useFetch('/data/logements.json') // Utilisation du hook personnalisé, l'adresse est passée en argument
+  const properties = useFetch(
+    'https://raw.githubusercontent.com/5sensprod/p11_kasa/main/public/data/logements.json'
+  ) // Utilisation du hook personnalisé, l'adresse est passée en argument
 
   useEffect(() => {
     setMarginBottomSize('large')
