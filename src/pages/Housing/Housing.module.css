@@ -17,7 +17,8 @@
     display: grid;
     grid-template-areas:
         "titleAndLocation hostInfo"
-        "tags starRating";
+        "tags starRating"
+    ;
     gap: 24px;
     align-items: center;
     margin-top: 30px;
@@ -27,6 +28,7 @@
 .titleAndLocation {
     display: flex;
     flex-direction: column;
+    grid-area: titleAndLocation;
 }
 
 .title {
@@ -35,10 +37,19 @@
     color: #FF6060;
 }
 
+.hostInfo {
+    grid-area: hostInfo;
+}
+
+.tags {
+    grid-area: tags;
+}
+
 .location {
     font-weight: 500;
     font-size: 18px;
     color: #FF6060;
+    grid-area: location;
 }
 
 .dropdownContainer {
@@ -54,6 +65,14 @@
 
     .infoContainer {
         margin-top: 15px;
+        display: grid;
+        grid-template-areas:
+            "tags titleAndLocation "
+            "hostInfo starRating";
+        gap: 24px;
+        align-items: center;
+        margin-top: 30px;
+        justify-content: space-between;
     }
 
     .title {
