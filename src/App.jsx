@@ -1,4 +1,4 @@
-import { BrowserRouter as Router } from 'react-router-dom'
+import { HashRouter as Router } from 'react-router-dom'
 import AppRouter from './routes/Router'
 import Layout from './components/Layout'
 import { MarginBottomContext } from './contexts/MarginBottomContext'
@@ -8,7 +8,7 @@ function App() {
   const [marginBottomSize, setMarginBottomSize] = useState('small')
 
   return (
-    <Router basename={process.env.PUBLIC_URL}>
+    <Router>
       <MarginBottomContext.Provider
         value={{ marginBottomSize, setMarginBottomSize }}
       >
