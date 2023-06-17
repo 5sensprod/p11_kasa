@@ -32,6 +32,7 @@ function Home() {
         title="Chez vous, partout et ailleurs"
         backgroundImage={homeBackground}
         visible={true}
+        className={styles.bannerContainer}
       />
       <div className={styles['grid-container']}>
         {properties.map((property) => (
