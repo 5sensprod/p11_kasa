@@ -14,13 +14,12 @@
 }
 
 .infoContainer {
-    grid-template-columns: 70% 30%;
+    grid-template-rows: repeat(auto-fit, minmax(25px, 1fr));
     display: grid;
     grid-template-areas:
         "title hostInfo"
         "location location"
         "tags starRating";
-    gap: 24px;
     align-items: center;
     margin-top: 30px;
     justify-content: space-between;
@@ -38,6 +37,7 @@
     font-size: 18px;
     color: #FF6060;
     grid-area: location;
+    margin-bottom: 20px;
 }
 
 .tags {
@@ -49,7 +49,6 @@
 }
 
 .dropdownContainer {
-    grid-template-columns: 70% 30%;
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
@@ -61,8 +60,10 @@
 @media screen and (max-width: 768px) {
 
     .infoContainer {
-        grid-template-columns: 50% 50%;
-        margin-top: 15px;
+        grid-template-columns: 40% 60%;
+        grid-template-rows: repeat(auto-fit, minmax(25px, 1fr));
+        margin-top: 5px;
+        margin-bottom: 0px;
         grid-template-areas:
             "title title"
             "location location"
@@ -79,7 +80,13 @@
         font-size: 14px;
     }
 
-    .hostInfo {
-        margin-top: 50px;
+    .tags {
+        margin-bottom: 20px;
+    }
+
+    .dropdownContainer {
+        flex-direction: column;
+        gap: 0px;
+
     }
 }

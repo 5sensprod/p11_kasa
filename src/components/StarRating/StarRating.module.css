@@ -4,7 +4,6 @@
 }
 
 .star {
-  width: 25px;
   height: 24px;
 }
 
@@ -14,7 +13,6 @@
   }
 
   .star {
-    width: 18px;
-    height: 18px;
+    height: 14px;
   }
 }
