@@ -7,9 +7,9 @@ import styles from './HostInfo.module.css'
  * Il affiche le nom de l'hôte et une image associée.
  * Il accepte un objet host en props, qui doit contenir les propriétés 'name' (une chaîne) et 'picture' (une URL de l'image).
  */
-function HostInfo({ host }) {
+function HostInfo({ host, className }) {
   return (
-    <div className={styles.hostInfo}>
+    <div className={`${styles.hostInfo} ${className}`}>
       <div className={styles.name}>
         <div>{host.name.split(' ')[0]}</div>
         <div>{host.name.split(' ')[1]}</div>
@@ -24,6 +24,7 @@ HostInfo.propTypes = {
     name: PropTypes.string.isRequired,
     picture: PropTypes.string.isRequired,
   }).isRequired,
+  className: PropTypes.string,
 }
 
 export default HostInfo

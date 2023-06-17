@@ -36,13 +36,15 @@ function Housing() {
     <main className={styles.housingContainer}>
       <Slideshow pictures={property.pictures} />
       <div className={styles.infoContainer}>
-        <div className={styles.titleAndLocation}>
-          <h1 className={styles.title}>{property.title}</h1>
-          <p className={styles.location}>{property.location}</p>
-        </div>
-        <HostInfo host={property.host} />
-        <Tags tags={property.tags} />
-        <StarRating rating={parseInt(property.rating)} />
+        <h1 className={styles.title}>{property.title}</h1>
+        <p className={styles.location}>{property.location}</p>
+
+        <HostInfo host={property.host} className={styles.hostInfo} />
+        <Tags tags={property.tags} className={styles.tags} />
+        <StarRating
+          rating={parseInt(property.rating)}
+          className={styles.starRating}
+        />
       </div>
       <div className={styles.dropdownContainer}>
         <Dropdown

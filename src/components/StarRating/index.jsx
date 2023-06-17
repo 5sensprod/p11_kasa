@@ -7,12 +7,12 @@ import starRed from '../../assets/star_red.svg'
 /**
  * StarRating affiche une évaluation sous forme d'étoiles.
  */
-function StarRating({ rating }) {
+function StarRating({ rating, className }) {
   // si rating est undefined ou null, traiter cela comme un 0
   const normalizedRating = rating ?? 0
 
   return (
-    <div className={styles.stars}>
+    <div className={`${styles.stars} ${className}`}>
       {[...Array(5)].map((_starItem, i) => {
         const ratingValue = i + 1
         return (
@@ -30,6 +30,7 @@ function StarRating({ rating }) {
 
 StarRating.propTypes = {
   rating: PropTypes.number.isRequired,
+  className: PropTypes.string,
 }
 
 export default StarRating

@@ -14,35 +14,23 @@
 }
 
 .infoContainer {
+    grid-template-columns: 70% 30%;
     display: grid;
     grid-template-areas:
-        "titleAndLocation hostInfo"
-        "tags starRating"
-    ;
+        "title hostInfo"
+        "location location"
+        "tags starRating";
     gap: 24px;
     align-items: center;
     margin-top: 30px;
     justify-content: space-between;
 }
 
-.titleAndLocation {
-    display: flex;
-    flex-direction: column;
-    grid-area: titleAndLocation;
-}
-
 .title {
     font-weight: 500;
     font-size: 36px;
     color: #FF6060;
-}
-
-.hostInfo {
-    grid-area: hostInfo;
-}
-
-.tags {
-    grid-area: tags;
+    grid-area: title;
 }
 
 .location {
@@ -52,7 +40,16 @@
     grid-area: location;
 }
 
+.tags {
+    grid-area: tags;
+}
+
+.hostInfo {
+    grid-area: hostInfo;
+}
+
 .dropdownContainer {
+    grid-template-columns: 70% 30%;
     margin-top: 24px;
     display: flex;
     justify-content: space-between;
@@ -64,15 +61,14 @@
 @media screen and (max-width: 768px) {
 
     .infoContainer {
+        grid-template-columns: 50% 50%;
         margin-top: 15px;
-        display: grid;
         grid-template-areas:
-            "tags titleAndLocation "
-            "hostInfo starRating";
-        gap: 24px;
-        align-items: center;
-        margin-top: 30px;
-        justify-content: space-between;
+            "title title"
+            "location location"
+            "tags tags"
+            "starRating hostInfo"
+        ;
     }
 
     .title {
@@ -81,5 +77,9 @@
 
     .location {
         font-size: 14px;
+    }
+
+    .hostInfo {
+        margin-top: 50px;
     }
 }
