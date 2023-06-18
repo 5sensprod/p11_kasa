@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/p11_kasa/static/css/main.c6006751.css",
+    "main.css": "/p11_kasa/static/css/main.8b2b5d38.css",
     "main.js": "/p11_kasa/static/js/main.71af4c18.js",
     "static/media/bg-sea-min.png": "/p11_kasa/static/media/bg-sea-min.ea0dde14cf4508914311.png",
     "static/media/bg-montain-min.png": "/p11_kasa/static/media/bg-montain-min.dcec1b445e69772787ed.png",
@@ -13,11 +13,11 @@
     "static/media/chevron-up.svg": "/p11_kasa/static/media/chevron-up.4a0d3650fa868343d6697607ac04673f.svg",
     "static/media/prev.svg": "/p11_kasa/static/media/prev.f114b3d36e56c8c217832ad98a63d472.svg",
     "static/media/next.svg": "/p11_kasa/static/media/next.8d9545cb18f67cea4ffddb888aa4dcb0.svg",
-    "main.c6006751.css.map": "/p11_kasa/static/css/main.c6006751.css.map",
+    "main.8b2b5d38.css.map": "/p11_kasa/static/css/main.8b2b5d38.css.map",
     "main.71af4c18.js.map": "/p11_kasa/static/js/main.71af4c18.js.map"
   },
   "entrypoints": [
-    "static/css/main.c6006751.css",
+    "static/css/main.8b2b5d38.css",
     "static/js/main.71af4c18.js"
   ]
 }
