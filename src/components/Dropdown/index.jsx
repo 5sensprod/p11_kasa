@@ -1,8 +1,31 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Dropdown.module.css'
-import chevronDown from '../../assets/chevron-down.svg'
-import chevronUp from '../../assets/chevron-up.svg'
+import chevron from '../../assets/chevron-down.svg'
+
+function AnimateHeight({ isOpen, children }) {
+  const [height, setHeight] = useState(isOpen ? 'auto' : '0')
+  const contentRef = useRef(null)
+
+  useEffect(() => {
+    setHeight(isOpen ? `${contentRef.current.scrollHeight}px` : '0')
+  }, [isOpen])
+
+  return (
+    <div
+      ref={contentRef}
+      className={styles.dropdownContent}
+      style={{ height: height }}
+    >
+      {children}
+    </div>
+  )
+}
+
+AnimateHeight.propTypes = {
+  isOpen: PropTypes.bool.isRequired,
+  children: PropTypes.node.isRequired,
+}
 
 /**
  * Composant pour afficher la liste déroulante
@@ -34,11 +57,21 @@ DropdownList.propTypes = {
 
 // Composant pour le bouton déroulant
 // Accepte les props title, titleFontSize, isOpen et setIsOpen
-function DropdownButton({ title, titleFontSize, isOpen, setIsOpen }) {
+function DropdownButton({
+  title,
+  titleFontSize,
+  isOpen,
+  setIsOpen,
+  rotate,
+  setRotate,
+}) {
   return (
     <button
       className={styles.dropdownButton}
-      onClick={() => setIsOpen(!isOpen)}
+      onClick={() => {
+        setIsOpen(!isOpen)
+        setRotate(!rotate)
+      }}
       aria-expanded={isOpen}
     >
       <span
@@ -48,9 +81,9 @@ function DropdownButton({ title, titleFontSize, isOpen, setIsOpen }) {
         {title}
       </span>
       <img
-        src={isOpen ? chevronUp : chevronDown}
+        src={chevron}
         alt="chevron"
-        className={styles.chevron}
+        className={`${styles.chevron} ${rotate ? styles.rotate : ''}`}
       />
     </button>
   )
@@ -61,12 +94,15 @@ DropdownButton.propTypes = {
   titleFontSize: PropTypes.string,
   isOpen: PropTypes.bool.isRequired,
   setIsOpen: PropTypes.func.isRequired,
+  rotate: PropTypes.bool.isRequired,
+  setRotate: PropTypes.func.isRequired,
 }
 
 // Composant principal pour Dropdown
 // Accepte les props title, description, isList, titleFontSize et listFontSize
 function Dropdown({ title, description, isList, titleFontSize, listFontSize }) {
   const [isOpen, setIsOpen] = useState(false)
+  const [rotate, setRotate] = useState(false)
 
   return (
     <div className={styles.dropdown}>
@@ -75,14 +111,16 @@ function Dropdown({ title, description, isList, titleFontSize, listFontSize }) {
         titleFontSize={titleFontSize}
         isOpen={isOpen}
         setIsOpen={setIsOpen}
+        rotate={rotate}
+        setRotate={setRotate}
       />
-      {isOpen && (
+      <AnimateHeight isOpen={isOpen}>
         <DropdownList
           isList={isList}
           description={description}
           listFontSize={listFontSize}
         />
-      )}
+      </AnimateHeight>
     </div>
   )
 }
