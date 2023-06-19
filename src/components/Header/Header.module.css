@@ -20,6 +20,10 @@
     display: flex;
     gap: 3.5rem;
 }
+.link:hover {
+    color: #616161;
+    transition: color 0.2s ease;
+  }
 
 .link,
 .activeLink {
