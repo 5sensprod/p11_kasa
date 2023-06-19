@@ -34,8 +34,10 @@ function Housing() {
 
   return (
     <main className={styles.housingContainer}>
-      <Slideshow pictures={property.pictures} />
-      <div className={styles.infoContainer}>
+      <section aria-label="Diaporama">
+        <Slideshow pictures={property.pictures} />
+      </section>
+      <section className={styles.infoContainer}>
         <h1 className={styles.title}>{property.title}</h1>
         <p className={styles.location}>{property.location}</p>
 
@@ -45,8 +47,11 @@ function Housing() {
           rating={parseInt(property.rating)}
           className={styles.starRating}
         />
-      </div>
-      <div className={styles.dropdownContainer}>
+      </section>
+      <section
+        className={styles.dropdownContainer}
+        aria-label="Plus d'informations"
+      >
         <Dropdown
           title="Description"
           description={property.description}
@@ -60,7 +65,7 @@ function Housing() {
           titleFontSize={isMobile ? '13px' : '18px'}
           listFontSize={isMobile ? '12px' : '18px'}
         />
-      </div>
+      </section>
     </main>
   )
 }

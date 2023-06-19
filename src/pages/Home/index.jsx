@@ -34,11 +34,12 @@ function Home() {
         visible={true}
         className={styles.bannerContainer}
       />
-      <div className={styles['grid-container']}>
+      <section className={styles['grid-container']}>
+        <h2 className={styles.hiddenTitle}>Propriétés disponibles</h2>
         {properties.map((property) => (
           <Card key={property.id} property={property} />
         ))}
-      </div>
+      </section>
     </main>
   )
 }
