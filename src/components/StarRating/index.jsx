@@ -1,8 +1,8 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import styles from './StarRating.module.css'
-import star from '../../assets/star.svg'
-import starRed from '../../assets/star_red.svg'
+import star from '../../assets/star.png'
+import starRed from '../../assets/star_red.png'
 
 /**
  * StarRating affiche une évaluation sous forme d'étoiles.

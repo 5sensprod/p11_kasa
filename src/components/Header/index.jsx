@@ -1,7 +1,7 @@
 import React from 'react'
 import { NavLink, useLocation } from 'react-router-dom'
 import styles from './Header.module.css'
-import logo from '../../assets/logo.svg'
+import logo from '../../assets/logo.png'
 
 // Header est un composant qui représente l'en-tête du site.
 function Header({ marginBottomSize }) {

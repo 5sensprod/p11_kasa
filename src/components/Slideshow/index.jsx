@@ -1,8 +1,8 @@
 import React, { useState } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Slideshow.module.css'
-import PrevSVG from '../../assets/prev.svg'
-import NextSVG from '../../assets/next.svg'
+import PrevSVG from '../../assets/prev.png'
+import NextSVG from '../../assets/next.png'
 
 /**
  * Le composant Slideshow est utilisé pour afficher un diaporama d'images.

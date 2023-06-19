@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styles from './Dropdown.module.css'
-import chevron from '../../assets/chevron-down.svg'
+import chevron from '../../assets/chevron-down.png'
 
 function AnimateHeight({ isOpen, children }) {
   const [height, setHeight] = useState(isOpen ? 'auto' : '0')
